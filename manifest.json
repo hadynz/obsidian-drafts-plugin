@@ -1,0 +1,9 @@
+{
+  "id": "obsidian-drafts-plugin",
+  "name": "Drafts",
+  "version": "1.0.0",
+  "description": "Drafts for Obsidian",
+  "minAppVersion": "0.10.2",
+  "author": "Hady Osman",
+  "authorUrl": "https://hady.geek.nz"
+}
