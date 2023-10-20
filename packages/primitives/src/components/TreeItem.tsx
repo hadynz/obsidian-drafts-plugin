@@ -1,8 +1,9 @@
 import React from 'react';
-import { Tokens } from '@obsidian-drafts/primitives';
 import { styled } from '@stitches/react';
 import clsx from 'clsx';
 import moment from 'moment';
+
+import * as Tokens from '../tokens';
 
 export type FileItem = {
   title: string;

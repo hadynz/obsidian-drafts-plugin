@@ -5,6 +5,7 @@
   ],
   "version": "1.0.0",
   "scripts": {
+    "dev": "npm run dev --workspace=@obsidian-drafts/plugin",
     "build": "npm run build --workspace=@obsidian-drafts/plugin",
     "prettier": "prettier --write '**/*.{ts,js,css,html}'",
     "lint": "tsc --noemit && svelte-check && eslint . --ext .ts",

@@ -1,7 +1,7 @@
 import { ItemView, Vault, WorkspaceLeaf } from 'obsidian';
 
 import React, { StrictMode } from 'react';
-import { createRoot,Root } from 'react-dom/client';
+import { createRoot, Root } from 'react-dom/client';
 import { Tree } from '@obsidian-drafts/primitives';
 
 import { DraftsToolbar } from './components';

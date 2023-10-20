@@ -1,7 +1,6 @@
 import CopyPlugin from 'copy-webpack-plugin';
 import dotenv from 'dotenv';
 import path from 'path';
-import sveltePreprocess from 'svelte-preprocess';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration, DefinePlugin } from 'webpack';
 
@@ -11,11 +10,12 @@ dotenv.config();
 
 const isProduction = process.env.NODE_ENV === 'production';
 const releaseVersion = pack.version;
+const rootDirectory = path.join(__dirname, '..', '..');
 
 const config: Configuration = {
   entry: './src/index.ts',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(rootDirectory, 'dist'),
     filename: '[name].js',
     libraryTarget: 'commonjs',
     clean: true,
@@ -28,20 +28,10 @@ const config: Configuration = {
       {
         test: /\.tsx?$/,
         loader: 'ts-loader',
+        exclude: /node_modules/,
         options: {
           transpileOnly: true,
         },
-      },
-      {
-        test: /\.(svelte)$/,
-        use: [
-          {
-            loader: 'svelte-loader',
-            options: {
-              preprocess: sveltePreprocess({}),
-            },
-          },
-        ],
       },
       {
         test: /\.(svg|njk|html)$/,
@@ -63,7 +53,7 @@ const config: Configuration = {
     new CopyPlugin({
       patterns: [
         {
-          from: './manifest.json',
+          from: path.resolve(rootDirectory, 'manifest.json'),
           to: '.',
         },
       ],
@@ -75,12 +65,8 @@ const config: Configuration = {
     }),
   ],
   resolve: {
-    alias: {
-      svelte: path.resolve('node_modules', 'svelte'),
-      '~': path.resolve(__dirname, 'src'),
-    },
-    extensions: ['.ts', '.tsx', '.js', '.svelte'],
-    mainFields: ['svelte', 'browser', 'module', 'main'],
+    extensions: ['.ts', '.tsx', '.js'],
+    mainFields: ['browser', 'module', 'main'],
   },
   externals: {
     electron: 'commonjs2 electron',

@@ -11,5 +11,8 @@
   "dependencies": {
     "@stitches/react": "^1.2.8",
     "clsx": "^2.0.0"
+  },
+  "peerDependencies": {
+    "moment": "^2.29.4"
   }
 }
