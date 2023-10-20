@@ -4,23 +4,20 @@ import { styled } from '@stitches/react';
 import * as Tokens from '../tokens';
 import moment from 'moment';
 
-type TreeItemProps = {
+export type FileItem = {
   title: string;
   contentPreview?: string;
   tags?: string[];
   lastModifiedDate: Date;
+};
+
+type TreeItemProps = {
+  file: FileItem;
   isSelected: boolean;
   onSelected: () => void;
 };
 
-export const TreeItem = ({
-  title,
-  contentPreview,
-  tags,
-  lastModifiedDate,
-  isSelected,
-  onSelected,
-}: TreeItemProps) => {
+export const TreeItem = ({ file, isSelected, onSelected }: TreeItemProps) => {
   const onClick = () => {
     onSelected();
   };
@@ -33,17 +30,17 @@ export const TreeItem = ({
       onClick={onClick}
     >
       <div>
-        <Title>{title}</Title>
-        {contentPreview && <Preview>{contentPreview}</Preview>}
+        <Title>{file.title}</Title>
+        {file.contentPreview && <Preview>{file.contentPreview}</Preview>}
       </div>
-      {tags?.length > 0 && (
+      {file.tags?.length > 0 && (
         <div>
-          {tags.map((tag) => (
+          {file.tags.map((tag) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
         </div>
       )}
-      <ModifiedDate>{`Modified ${moment(lastModifiedDate).fromNow()}`}</ModifiedDate>
+      <ModifiedDate>{`Modified ${moment(file.lastModifiedDate).fromNow()}`}</ModifiedDate>
     </Content>
   );
 };

@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import { TreeItem } from './';
+import { FileItem } from './TreeItem';
 
-export const Tree = () => {
+type TreeProps = {
+  inbox: FileItem[];
+};
+
+export const Tree = ({ inbox }: TreeProps) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
-  return Array.from({ length: 3 })
-    .fill(null)
-    .map((_, index) => (
-      <TreeItem
-        key={index}
-        title="Hello world"
-        contentPreview="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        tags={['#tag1', '#tag2']}
-        lastModifiedDate={new Date()}
-        onSelected={() => setSelectedIndex(index)}
-        isSelected={index == selectedIndex}
-      />
-    ));
+  return inbox.map((file, index) => (
+    <TreeItem
+      key={file.title}
+      file={file}
+      onSelected={() => setSelectedIndex(index)}
+      isSelected={index === selectedIndex}
+    />
+  ));
 };
