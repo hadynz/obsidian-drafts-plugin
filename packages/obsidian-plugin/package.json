@@ -1,0 +1,39 @@
+{
+  "name": "@obsidian-drafts/plugin",
+  "version": "1.0.0",
+  "description": "Drafts for Obsidian",
+  "main": "src/index.ts",
+  "author": {
+    "name": "Hady Osman",
+    "email": "hadyos@gmail.com",
+    "url": "https://hady.geek.nz"
+  },
+  "scripts": {
+    "test": "jest --verbose",
+    "dev": "NODE_ENV=development webpack && cp ./dist/main.js* .",
+    "build": "NODE_ENV=production webpack"
+  },
+  "dependencies": {
+    "@obsidian-drafts/primitives": "^1.0.0",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.199",
+    "@types/node": "^20.8.6",
+    "@types/react": "^18.2.28",
+    "@types/react-dom": "^18.2.13",
+    "@types/webpack": "^5.28.3",
+    "copy-webpack-plugin": "^11.0.0",
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0",
+    "obsidian": "latest",
+    "terser-webpack-plugin": "^5.3.9",
+    "typescript": "^5.2.2",
+    "uglify-js": "^3.17.4",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}

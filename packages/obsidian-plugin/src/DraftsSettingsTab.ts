@@ -1,5 +1,6 @@
-import _ from 'lodash';
 import { App, PluginSettingTab, Setting } from 'obsidian';
+
+import _ from 'lodash';
 
 import KindlePlugin from './';
 

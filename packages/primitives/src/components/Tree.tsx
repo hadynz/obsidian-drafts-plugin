@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { TreeItem } from './';
-import { FileItem } from './TreeItem';
+
+import { FileItem, TreeItem } from './TreeItem';
 
 type TreeProps = {
   inbox: FileItem[];
 };
 
 export const Tree = ({ inbox }: TreeProps) => {
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState<number>(null);
   return inbox.map((file, index) => (
     <TreeItem
       key={file.title}

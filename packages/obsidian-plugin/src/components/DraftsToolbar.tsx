@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button, ButtonIcon, Select, Toolbar } from '../primitives';
-
 import { HiOutlineArchiveBox, HiOutlineInboxArrowDown, HiOutlineTrash } from 'react-icons/hi2';
+import { Button, ButtonIcon, Select, Toolbar } from '@obsidian-drafts/primitives';
 
 type Pane = 'inbox' | 'archive' | 'trash' | 'all';
 
+// eslint-disable-next-line @typescript-eslint/ban-types
 type DraftsToolbarProps = {};
 
 export const DraftsToolbar = ({}: DraftsToolbarProps) => {

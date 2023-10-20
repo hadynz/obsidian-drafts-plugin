@@ -1,7 +1,9 @@
-import { ItemView, WorkspaceLeaf, Vault } from 'obsidian';
+import { ItemView, Vault, WorkspaceLeaf } from 'obsidian';
+
 import React, { StrictMode } from 'react';
-import { Root, createRoot } from 'react-dom/client';
-import { Tree } from './primitives';
+import { createRoot,Root } from 'react-dom/client';
+import { Tree } from '@obsidian-drafts/primitives';
+
 import { DraftsToolbar } from './components';
 import { Settings } from './DraftsSettingsTab';
 
@@ -47,6 +49,7 @@ export class DraftsView extends ItemView {
     );
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   async onClose() {
     this.root?.unmount();
   }

@@ -6,7 +6,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.ts'],
+      files: ['*.{ts,tsx}'],
       extends: [
         'plugin:@typescript-eslint/recommended-requiring-type-checking',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -21,6 +21,8 @@ module.exports = {
           'error',
           {
             groups: [
+              // Packages `obsidian` related packages come first.
+              ['^obsidian'],
               // Packages `react` related packages come first.
               ['^react', '^@?\\w'],
               // Internal packages.

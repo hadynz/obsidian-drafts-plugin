@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import React from 'react';
+import clsx from 'clsx';
 
 const SmallFontSize = 'var(--font-ui-smaller)';
 
@@ -10,7 +10,7 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export const Button = ({ label, text, isSelected, onClick }: ButtonProps) => {
+export const Button = ({ label, text, onClick }: ButtonProps) => {
   return (
     <div
       className={clsx('clickable-icon nav-action-button')}

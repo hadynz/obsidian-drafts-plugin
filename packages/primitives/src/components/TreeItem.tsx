@@ -1,7 +1,7 @@
-import clsx from 'clsx';
 import React from 'react';
+import { Tokens } from '@obsidian-drafts/primitives';
 import { styled } from '@stitches/react';
-import * as Tokens from '../tokens';
+import clsx from 'clsx';
 import moment from 'moment';
 
 export type FileItem = {

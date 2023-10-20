@@ -5,7 +5,7 @@ import sveltePreprocess from 'svelte-preprocess';
 import TerserPlugin from 'terser-webpack-plugin';
 import { Configuration, DefinePlugin } from 'webpack';
 
-import pack from './package.json';
+import pack from '../../package.json';
 
 dotenv.config();
 

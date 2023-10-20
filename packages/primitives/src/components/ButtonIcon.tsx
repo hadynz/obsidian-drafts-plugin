@@ -1,6 +1,6 @@
-import clsx from 'clsx';
 import React, { ComponentType } from 'react';
 import { IconBaseProps } from 'react-icons';
+import clsx from 'clsx';
 
 const IconSize = 'var(--icon-size)';
 
@@ -11,7 +11,7 @@ type ButtonIconProps = {
   Icon: ComponentType<IconBaseProps>;
 };
 
-export const ButtonIcon = ({ label, isSelected, Icon, onClick }: ButtonIconProps) => {
+export const ButtonIcon = ({ label, Icon, onClick }: ButtonIconProps) => {
   return (
     <div
       className={clsx('clickable-icon nav-action-button')}
